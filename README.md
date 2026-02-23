@@ -12,7 +12,7 @@ Currently learning manual testing and building practical experience.
 - Understanding of SDLC and STLC
 - Basic knowledge of software testing principles
 
-- 
+
 ## Projects
 ### Web Testing Project
 Manual testing of web application.
