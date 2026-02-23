@@ -9,9 +9,7 @@ Currently learning manual testing and building practical experience.
 - Writing Test Cases
 - Creating Checklists
 - Bug Reporting
-- Basic API Testing (Postman)
 - Basic SQL
-- DevTools (Network tab)
 
 ## Projects
 ### Web Testing Project
