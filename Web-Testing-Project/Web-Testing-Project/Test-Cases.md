@@ -34,7 +34,13 @@ Validation error message is displayed.
 
 ## TC-03: Login with Valid Credentials
 
+**Priority:** High  
+**Environment:** Windows 10, Chrome (latest)  
 **Precondition:** User account exists.
+
+**Test Data:**
+- Email: existing@mail.com
+- Password: Qwerty123!
 
 **Steps:**
 1. Open login page.
@@ -46,11 +52,22 @@ Validation error message is displayed.
 User is successfully logged in.
 User dashboard is displayed.
 
+**Actual Result:**
+User redirected to dashboard successfully.
+
+**Status:** Pass
+
 ---
 
-## TC-04: Login with Invalid Password
+ ## TC-04: Login with Invalid Password
 
+**Priority:** High  
+**Environment:** Windows 10, Chrome (latest)  
 **Precondition:** User account exists.
+
+**Test Data:**
+- Email: existing@mail.com
+- Password: wrongPassword123
 
 **Steps:**
 1. Open login page.
@@ -60,6 +77,13 @@ User dashboard is displayed.
 
 **Expected Result:**
 Error message "Invalid credentials" is displayed.
+User is not logged in.
+
+**Actual Result:**
+Error message "Invalid credentials" is displayed.
+User remains on login page.
+
+**Status:** Pass
 
 ---
 
@@ -344,3 +368,27 @@ Redirect to login page or access denied message.
 **Expected Result:**
 No layout breaking, key elements are usable.
 **Status:** Not Run
+
+## TC-21: Login Error Message Not Displayed
+
+**Priority:** High  
+**Environment:** Windows 10, Chrome (latest)  
+**Precondition:** User account exists.
+
+**Test Data:**
+- Email: existing@mail.com
+- Password: wrongPassword123
+
+**Steps:**
+1. Open login page.
+2. Enter valid email.
+3. Enter incorrect password.
+4. Click "Login".
+
+**Expected Result:**
+Error message should be displayed.
+
+**Actual Result:**
+No error message is displayed after clicking "Login".
+
+**Status:** Fail
