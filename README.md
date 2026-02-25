@@ -17,3 +17,12 @@ Currently learning manual testing and building practical experience.
 ### Web Testing Project
 Manual testing of web application.
 Includes checklist, test cases and bug reports.
+
+### SQL Practice
+Basic SQL queries practice including:
+- SELECT
+- WHERE
+- AND / OR
+- IN
+- BETWEEN
+- LIKE
