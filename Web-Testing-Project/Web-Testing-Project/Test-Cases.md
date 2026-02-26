@@ -2,168 +2,132 @@
 
 ---
 
-## Simple Test Cases
+## TC-01: Successful Registration with Valid Data
+**Precondition:** User is not registered. Registration page is available.
 
-### TC-01: Successful Registration
-Steps:
-1. Open registration page.
-2. Enter valid email and password.
-3. Click "Register".
+**Steps:**
+1. Open the Registration page.
+2. Enter a valid email.
+3. Enter a valid password that meets requirements.
+4. Click "Register".
 
-Expected:
-User account is created successfully.
-Confirmation message is displayed.
+**Expected Result:**
+User account is created successfully. User sees confirmation message and/or is redirected to a welcome/dashboard page.
 
 ---
 
-### TC-02: Registration with Empty Fields
-Steps:
-1. Open registration page.
+## TC-02: Registration Validation for Empty Required Fields
+**Precondition:** Registration page is available.
+
+**Steps:**
+1. Open the Registration page.
 2. Leave required fields empty.
 3. Click "Register".
 
-Expected:
-Validation error message is displayed.
+**Expected Result:**
+Validation messages are displayed for required fields. Account is not created.
 
 ---
 
-### TC-03: Login with Valid Credentials
-Precondition: User account exists.
+## TC-03: Registration with Invalid Email Format
+**Precondition:** Registration page is available.
 
-Steps:
-1. Open login page.
-2. Enter valid email and password.
-3. Click "Login".
+**Steps:**
+1. Open the Registration page.
+2. Enter an invalid email (e.g., `testmail.com`).
+3. Enter a valid password.
+4. Click "Register".
 
-Expected:
-User is logged in and redirected to dashboard.
-
----
-
-### TC-04: Login with Invalid Password
-Steps:
-1. Open login page.
-2. Enter valid email.
-3. Enter incorrect password.
-4. Click "Login".
-
-Expected:
-Error message is displayed.
-User is not logged in.
+**Expected Result:**
+Email validation error is displayed. Account is not created.
 
 ---
 
-### TC-05: Logout
-Precondition: User is logged in.
+## TC-04: Registration with Existing Email
+**Precondition:** An account with the email already exists.
 
-Steps:
-1. Click "Logout".
+**Steps:**
+1. Open the Registration page.
+2. Enter an existing email.
+3. Enter a valid password.
+4. Click "Register".
 
-Expected:
-User is logged out.
-Login page is displayed.
-
----
-
-### TC-06: Access Protected Page Without Login
-Steps:
-1. Open protected URL (e.g., /profile).
-
-Expected:
-User is redirected to login page.
+**Expected Result:**
+System shows message that email is already in use (or similar). Account is not created.
 
 ---
 
-### TC-07: Password Masking
-Steps:
-1. Open login page.
-2. Enter any password.
+## TC-05: Login with Valid Credentials
+**Precondition:** User account exists.
 
-Expected:
-Password characters are masked.
-
----
-
-## Detailed Test Cases (Enhanced Examples)
-
-### TC-08: Login with Valid Credentials (Detailed)
-
-Priority: High  
-Environment: Windows 10, Chrome (latest)  
-Precondition: User account exists.
-
-Test Data:
-- Email: existing@mail.com
-- Password: Qwerty123!
-
-Steps:
-1. Open login page.
+**Steps:**
+1. Open the Login page.
 2. Enter valid email.
 3. Enter valid password.
 4. Click "Login".
 
-Expected:
-User is successfully logged in.
-User dashboard is displayed.
-
-Actual:
-User redirected to dashboard successfully.
-
-Status:
-Pass
+**Expected Result:**
+User is logged in successfully and redirected to dashboard/home page. User session is created.
 
 ---
 
-### TC-09: Login with Invalid Password (Detailed)
+## TC-06: Login with Invalid Password
+**Precondition:** User account exists.
 
-Priority: High  
-Environment: Windows 10, Chrome (latest)  
-Precondition: User account exists.
-
-Test Data:
-- Email: existing@mail.com
-- Password: wrongPassword123
-
-Steps:
-1. Open login page.
+**Steps:**
+1. Open the Login page.
 2. Enter valid email.
-3. Enter incorrect password.
+3. Enter an incorrect password.
 4. Click "Login".
 
-Expected:
-Error message "Invalid credentials" is displayed.
-User is not logged in.
-
-Actual:
-Error message "Invalid credentials" is displayed.
-User remains on login page.
-
-Status:
-Pass
+**Expected Result:**
+Error message is displayed (e.g., "Invalid credentials"). User is not logged in and remains on the login page.
 
 ---
 
-### TC-10: Login Error Message Not Displayed (Fail Example)
+## TC-07: Login Form Validation for Empty Fields
+**Precondition:** Login page is available.
 
-Priority: High  
-Environment: Windows 10, Chrome (latest)  
-Precondition: User account exists.
+**Steps:**
+1. Open the Login page.
+2. Leave email and password empty.
+3. Click "Login".
 
-Test Data:
-- Email: existing@mail.com
-- Password: wrongPassword123
+**Expected Result:**
+Validation messages are displayed for required fields. No authorization request is completed successfully.
 
-Steps:
-1. Open login page.
-2. Enter valid email.
-3. Enter incorrect password.
-4. Click "Login".
+---
 
-Expected:
-Error message should be displayed.
+## TC-08: Password Field Masking on Login Page
+**Precondition:** Login page is available.
 
-Actual:
-No error message is displayed after clicking "Login".
+**Steps:**
+1. Open the Login page.
+2. Click the password field.
+3. Type any password value.
 
-Status:
-Fail
+**Expected Result:**
+Password characters are masked (displayed as dots/asterisks). Typed value is not visible.
+
+---
+
+## TC-09: Logout Ends User Session
+**Precondition:** User is logged in and can access a protected page (e.g., profile/settings).
+
+**Steps:**
+1. Click "Logout".
+2. Try to open a protected page via direct URL (e.g., `/profile`).
+
+**Expected Result:**
+User is logged out. Protected page is not accessible; user is redirected to Login page or sees access denied message.
+
+---
+
+## TC-10: Access Control for Protected Page Without Login
+**Precondition:** User is logged out.
+
+**Steps:**
+1. Open a protected page via direct URL (e.g., `/profile` or `/account`).
+
+**Expected Result:**
+System blocks access for unauthenticated users and redirects to Login page (or shows access denied). No protected data is shown.
