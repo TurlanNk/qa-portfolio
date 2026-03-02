@@ -7,7 +7,7 @@
 Environment: Windows 11, Yandex Browser  
 Precondition: User account exists and user is on the Login page
 
-Steps to Reproduce:
+Steps:
 1. Open the Login page
 2. Enter valid email
 3. Enter incorrect password
@@ -32,7 +32,7 @@ Status: Open
 Environment: Windows 10, Chrome  
 Precondition: User is not logged in
 
-Steps to Reproduce:
+Steps:
 1. Open the website
 2. Enter "/profile" in the browser URL
 3. Press Enter
@@ -55,7 +55,7 @@ Status: Open
 Environment: Windows 10, Chrome  
 Precondition: User is on the Registration page
 
-Steps to Reproduce:
+Steps:
 1. Open the Registration page
 2. Enter valid email
 3. Enter a password with 3 characters
