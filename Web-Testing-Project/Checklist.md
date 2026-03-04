@@ -7,7 +7,7 @@
 - Check registration with invalid email format
 - Check registration with existing email
 - Check password minimum length validation
-- Check password maximum length validation
+- Check password maximum length
 - Check required fields validation
 - Check error message display
 - Check successful registration message
@@ -26,5 +26,4 @@
 - Check buttons are clickable
 - Check input fields accept correct data
 - Check page layout in Chrome
-- Check page layout in Firefox
-- Check links redirect correctly
+- Check page layout in different browsers (Chrome, Firefox)
